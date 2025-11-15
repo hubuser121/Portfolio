@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-qzn50uy5886n2eo*7ghi+h8%4q7w@^s6-%xdv+u19chmy!nqo8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['portfolio-main-87505b9.kuberns.cloud','https://portfolio-main-87505b9.kuberns.cloud/admin/login/?next=/admin/']
+ALLOWED_HOSTS = []
 
 # Application definition
 
