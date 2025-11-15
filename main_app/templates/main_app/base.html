@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}My Portfolio{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main_app/style.css' %}">
+</head>
+<body>
+
+<nav class="main-nav">
+  <a class="nav-btn" href="{% url 'home' %}">Home</a>
+  <a class="nav-btn" href="{% url 'certificates' %}">Certificates</a>
+  <a class="nav-btn" href="{% url 'projects' %}">Projects</a>
+</nav>
+
+<main class="content-section">
+  {% block content %}{% endblock %}
+</main>
+
+{% now "Y" as current_year %}
+<footer>
+  &copy; {{ current_year }} Karthik's Portfolio
+</footer>
+
+</body>
+</html>

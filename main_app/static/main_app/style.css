@@ -1,0 +1,154 @@
+body {
+  background: url('/static/main_app/img/floral-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #f9fafc; /* fallback */
+  color: #000000;
+}
+
+.main-nav {
+  background: transparent;
+  color: #eafcff;
+  padding: 1.4em 2em 1em 2em;
+  text-align: left;
+  border: none; /* No border, no line */
+  margin-bottom: 1.8em;
+  display: flex;
+  gap: 1.5em;
+}
+
+.nav-btn {
+  display: inline-block;
+  background: rgba(45,143,255,0.25); /* semi-transparent accent */
+  color: #2d8fff;
+  border: none;
+  border-radius: 22px;
+  font-weight: 600;
+  font-size: 1.07em;
+  padding: 0.6em 1.3em;
+  margin-right: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: none;
+}
+
+.nav-btn:hover, .nav-btn:focus {
+  background: rgba(45,143,255,0.25);
+  color: #2d8fff;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(45,143,255,0.4);
+}
+
+
+/* Fully transparent cards and content sections */
+.content-section, .card {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #eafcff;
+  backdrop-filter: none !important;
+  margin-bottom: 2em;
+  padding: 1em 1.5em;
+  border-radius: 0; /* remove rounded corners if you like */
+}
+
+/* Centered certificate card for certificate page */
+.cert-card-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #171c32;
+  margin-bottom: 2em;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.center-cert-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0.9em;
+}
+
+/* Typography for dark, readable text everywhere */
+h1, h2, h3, h4, p, span, li, .tagline, .about-me {
+  color: #eaeaea;
+}
+
+/* Grid wrappers for future extension */
+.cards-wrapper, .certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+}
+
+.certs-grid .card, .cards-wrapper .card {
+  margin-bottom: 0;
+}
+
+/* Profile picture and nav remains unchanged */
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 20%;
+  border: 5px solid rgb(0, 0, 0);
+  box-shadow: 0 8px 16px rgba(108, 99, 255, 0.3);
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap; /* allows skills to wrap to next line if needed */
+  gap: 8px; /* space between buttons */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skill-item {
+  background-color: rgba(108, 99, 255, 0.25); /* semi-transparent purple accent */
+  color: #05ff15;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+  cursor: default;
+  white-space: nowrap; /* prevents text wrapping inside the button */
+  user-select: none;
+  transition: background 0.18s, color 0.18s;
+}
+
+.skill-item:hover {
+  background-color: rgba(15, 7, 174, 0.6);
+  color: #fff;
+}
+
+footer {
+  background-color: none; /* dark blue-gray background */
+  color: #f0f0f0;           /* light off-white text */
+  text-align: center;
+  padding: 1em 0;
+  font-size: 1em;
+  border-top: none; /* optional bright blue top border */
+}
+
+
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .cards-wrapper, .certs-grid {
+    grid-template-columns: 1fr;
+  }
+  .content-section {
+    margin: 1.5em 0.5em;
+    padding: 1.5em 1.5em;
+  }
+  .cert-card-center {
+    padding: 1em 0.5em;
+    max-width: 98vw;
+  }
+}

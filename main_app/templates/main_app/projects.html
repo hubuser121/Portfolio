@@ -1,0 +1,32 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Projects - My Portfolio{% endblock %}
+
+{% block content %}
+  <h1>My Projects</h1>
+
+  {% if projects %}
+    <ul style="list-style:none; padding-left:0;">
+      {% for project in projects %}
+        <li class="card" style="padding: 1em; border-radius: 12px; background: rgba(255,255,255,0.75); margin-bottom: 1em;">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <p><strong>Completed:</strong> {{ project.date_completed|date:"F j, Y" }}</p>
+          {% if project.link %}
+            <p>
+              <a class="skill-item" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
+                Project Link
+              </a>
+            </p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No projects to display.</p>
+  {% endif %}
+    <div style="margin-top: 20px;">
+<a class="nav-btn" href="{% url 'home' %}">Back to Home</a>
+</div>
+ 
+{% endblock %}

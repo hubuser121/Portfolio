@@ -1,0 +1,147 @@
+  body {
+  background: url('/static/main_app/img/floral-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #f9fafc; /* fallback */
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1em 1.5em;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #6c63ff;
+  color: white;
+  text-align: center;
+  padding: 3em 1em 4em;
+  position: relative;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 8px 16px rgba(108, 99, 255, 0.3);
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 2.8em;
+  margin-bottom: 0.2em;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1.25em;
+  font-weight: 300;
+  max-width: 450px;
+  margin: 0 auto 1.5em;
+  opacity: 0.9;
+}
+
+.about-me {
+  font-size: 1.05em;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Content Sections */
+.content-section {
+  background: white;
+  margin: 2.5em 1em;
+  padding: 2em 2.4em;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(96, 108, 128, 0.1);
+}
+
+.content-section h2 {
+  font-weight: 600;
+  color: #6c63ff;
+  font-size: 1.8em;
+  margin-bottom: 1.25em;
+  border-bottom: 2px solid #e8eafd;
+  padding-bottom: 8px;
+}
+
+/* Cards Wrapper */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 1.5em;
+}
+
+.card {
+  background: #f6f9fa;
+  padding: 1.4em 1.6em;
+  border-radius: 14px;
+  box-shadow: 0 5px 12px rgb(108 99 255 / 0.2);
+  color: #171c32;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.skills-list li {
+  background: #e6e7ff;
+  color: #4e4cbc;
+  font-size: 0.95em;
+  font-weight: 600;
+  padding: 0.3em 0.75em;
+  border-radius: 8px;
+}
+
+/* Experience, Education, Publication, Leadership */
+.experience-item, .education-item, .publication-item, .leadership-item {
+  margin-bottom: 1.8em;
+}
+
+.experience-item h3, .education-item h3, .publication-item h3, .leadership-item h3 {
+  margin-bottom: 6px;
+  color: #4b4e6d;
+}
+
+.experience-item p, .education-item p, .publication-item p, .leadership-item p {
+  margin: 0.15em 0;
+  color: #6f7292;
+}
+
+/* Links */
+a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .content-section {
+    margin: 1.5em 0.5em;
+    padding: 1.5em 1.5em;
+  }
+  .hero {
+    padding: 3em 1em 3.5em;
+  }
+}

@@ -1,0 +1,30 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Certificates - My Portfolio{% endblock %}
+
+{% block content %}
+  <h1 style="color:#ffffff; margin-bottom: 1em;">My Certificates</h1>
+
+  {% if certificates %}
+    <section id="certificates" class="content-section">
+      {% for cert in certificates %}
+        <div class="cert-card-center">
+          {% if cert.image %}
+            <img src="{{ cert.image.url }}" alt="Certificate: {{ cert.title }}" class="center-cert-img" loading="lazy" />
+          {% endif %}
+          <h3>{{ cert.title }}</h3>
+          {% if cert.description %}
+            <p>{{ cert.description }}</p>
+          {% endif %}
+          <p style="color: #ffffff;">
+            <strong>Received:</strong> {{ cert.date_received|date:"F j, Y" }}
+          </p>
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+    <div style="margin-top: 20px;">
+  <a class="nav-btn" href="{% url 'projects' %}">View Projects</a>
+  <a class="nav-btn" href="{% url 'home' %}">Back to Home</a> 
+    </div>
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+<div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 2em;">
+  <div>
+    <h1>Karthik Naik K</h1>
+    <div style="font-size: 1.1em; color: #e7ece7; margin-top: 0.3em;">
+      Aspiring Python Developer & Software Engineer
+    </div>
+    {% if about_text %}
+    <div class="content-section" style="background: rgba(255, 254, 254, 0.75); margin-top: 1em; padding: 1em; border-radius: 12px;">
+      <h2 style="margin-bottom: .5em;">About Me</h2>
+      <p style="margin: 0;">{{ about_text }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+  {% load static %}
+  <img src="{% if profile_url %}{{ profile_url }}{% else %}{% static 'main_app/img/default-profile.png' %}{% endif %}" 
+       alt="Profile Photo"
+       style="top: 6px; width: 120px; height: 120px; border-radius: 50%; box-shadow: 0 3px 9px #6c63ff44; object-fit: cover;">
+</div>
+  
+{% if projects %}
+<section id="projects">
+  <h2>Projects</h2>
+  <ul class="projects-list" style="list-style:none; padding-left:0;">
+    {% for project in projects %}
+    <li class="card" style="padding: 1em; border-radius: 12px; background: rgba(255,255,255,0.75); margin-bottom: 1em;">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      <span><strong>Completed:</strong> {{ project.date_completed|date:"F j, Y" }}</span>
+      {% if project.link %}
+        <p><a href="{{ project.link }}" target="_blank">Project Link</a></p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if skills %}
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="skills-container">
+    {% for skill in skills %}
+    <li class="skill-item">
+      {{ skill.name }} {% if skill.proficiency %}- {{ skill.proficiency }}{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if experiences %}
+<section id="experience">
+  <h2>Experience</h2>
+  <ul class="exp-list" style="list-style:none; padding-left:0;">
+    {% for exp in experiences %}
+    <li class="card" style="padding: 1em; border-radius: 12px; background: rgba(255,255,255,0.75); margin-bottom: 1em;">
+      <h3>{{ exp.title }} at {{ exp.company }}</h3>
+      <p>{{ exp.start_date }} - {% if exp.end_date %}{{ exp.end_date }}{% else %}Present{% endif %}</p>
+      <p>{{ exp.description }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if education %}
+<section id="education">
+  <h2>Education</h2>
+  <ul class="edu-list" style="list-style:none; padding-left:0;">
+    {% for edu in education %}
+    <li class="card" style="padding: 1em; border-radius: 12px; background: rgba(255,255,255,0.75); margin-bottom: 1em;">
+      <h3>{{ edu.degree }} from {{ edu.institution }}</h3>
+      <p>{{ edu.start_date }} - {% if edu.end_date %}{{ edu.end_date }}{% else %}Present{% endif %}</p>
+      <p>{{ edu.description }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if publications %}
+<section id="publications">
+  <h2>Publications</h2>
+  <ul class="pub-list" style="list-style:none; padding-left:0;">
+    {% for pub in publications %}
+    <li class="card" style="padding: 1em; border-radius: 12px; background: rgba(255,255,255,0.75); margin-bottom: 1em;">
+      <h3>{{ pub.title }}</h3>
+      {% if pub.publisher %}
+      <p>Publisher: {{ pub.publisher }}</p>
+      {% endif %}
+      {% if pub.publication_date %}
+      <p>Date: {{ pub.publication_date }}</p>
+      {% endif %}
+      <p>{{ pub.description }}</p>
+      {% if pub.link %}
+      <p><a href="{{ pub.link }}" target="_blank">View Publication</a></p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if leaderships %}
+<section id="leadership">
+  <h2>Leadership Activities</h2>
+  <ul class="lead-list" style="list-style:none; padding-left:0;">
+    {% for lead in leaderships %}
+    <li class="card" style="padding: 1em; border-radius: 12px; background: rgba(255,255,255,0.75); margin-bottom: 1em;">
+      <h3>{{ lead.role }} at {{ lead.organization }}</h3>
+      <p>{{ lead.start_date }} - {% if lead.end_date %}{{ lead.end_date }}{% else %}Present{% endif %}</p>
+      <p>{{ lead.description }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<div style="margin-top: 20px;">
+<a class="nav-btn" href="{% url 'certificates' %}">View Certificates</a>
+</div>
+
+{% endblock %}
