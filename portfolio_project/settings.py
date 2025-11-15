@@ -25,10 +25,9 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'django-insecure-qzn50uy5886n2eo*7ghi+h8%4q7w@^s6-%xdv+u19chmy!nqo8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['portfolio-main-87505b9.kuberns.cloud']
 
 # Application definition
 
