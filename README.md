@@ -1,4 +1,6 @@
 Portfolio Project - Django Web Application
+
+
 Overview
 This project is my personal portfolio website, developed using Django, a powerful and flexible Python web framework. The portfolio showcases my software development projects, certificates, and skills with a clean, professional, and responsive design.
 
