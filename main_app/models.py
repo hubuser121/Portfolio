@@ -12,7 +12,7 @@ class AboutMe(models.Model):
         verbose_name_plural = "About Me"
 
 class Project(models.Model):
-    title = models.CharField(max_length=200)
+    tittle = models.CharField(max_length=200)
     description = models.TextField()
     date_completed = models.DateField()
     link = models.URLField(blank=True)
@@ -25,7 +25,7 @@ class Project(models.Model):
         verbose_name_plural = "Projects"
 
 class Certificate(models.Model):
-    tittle = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     date_received = models.DateField()
     image = models.ImageField(upload_to='certificates/')
