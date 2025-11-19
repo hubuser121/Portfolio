@@ -25,7 +25,7 @@ class Project(models.Model):
         verbose_name_plural = "Projects"
 
 class Certificate(models.Model):
-    title = models.CharField(max_length=200)
+    tittle = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     date_received = models.DateField()
     image = models.ImageField(upload_to='certificates/')
