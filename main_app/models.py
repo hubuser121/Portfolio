@@ -12,7 +12,7 @@ class AboutMe(models.Model):
         verbose_name_plural = "About Me"
 
 class Project(models.Model):
-    tittle = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
     description = models.TextField()
     date_completed = models.DateField()
     link = models.URLField(blank=True)
